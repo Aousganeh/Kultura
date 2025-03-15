@@ -16,23 +16,22 @@ public class UserConfiguration : IEntityTypeConfiguration<ApplicationUser>
             new ApplicationUser
             {
                 Id = "1",
+                UserName = "owner@kultura.com",
+                NormalizedUserName = "OWNER@KULTURA.COM",
+                Email = "owner@kultura.com",
+                NormalizedEmail = "OWNER@KULTURA.COM",
+                EmailConfirmed = true,
+                PasswordHash = hasher.HashPassword(null, "Owner123!")
+            },
+            new ApplicationUser
+            {
+                Id = "2",
                 UserName = "admin@kultura.com",
                 NormalizedUserName = "ADMIN@KULTURA.COM",
                 Email = "admin@kultura.com",
                 NormalizedEmail = "ADMIN@KULTURA.COM",
                 EmailConfirmed = true,
                 PasswordHash = hasher.HashPassword(null, "Admin123!"),
-                BranchId = 1 // ✅ Assign branch
-            },
-            new ApplicationUser
-            {
-                Id = "2",
-                UserName = "waiter@kultura.com",
-                NormalizedUserName = "WAITER@KULTURA.COM",
-                Email = "waiter@kultura.com",
-                NormalizedEmail = "WAITER@KULTURA.COM",
-                EmailConfirmed = true,
-                PasswordHash = hasher.HashPassword(null, "Waiter123!"),
                 BranchId = 1
             },
             new ApplicationUser
@@ -49,6 +48,17 @@ public class UserConfiguration : IEntityTypeConfiguration<ApplicationUser>
             new ApplicationUser
             {
                 Id = "4",
+                UserName = "waiter@kultura.com",
+                NormalizedUserName = "WAITER@KULTURA.COM",
+                Email = "waiter@kultura.com",
+                NormalizedEmail = "WAITER@KULTURA.COM",
+                EmailConfirmed = true,
+                PasswordHash = hasher.HashPassword(null, "Waiter123!"),
+                BranchId = 1
+            },
+            new ApplicationUser
+            {
+                Id = "5",
                 UserName = "host@kultura.com",
                 NormalizedUserName = "HOST@KULTURA.COM",
                 Email = "host@kultura.com",

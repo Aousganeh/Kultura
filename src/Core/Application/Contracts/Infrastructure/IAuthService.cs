@@ -6,5 +6,4 @@ namespace Kultura.Application.Contracts.Infrastructure;
 public interface IAuthService
 {
     Task<AuthResponse> Login(AuthRequest request);
-    Task<RegistrationResponse> Register(RegistrationRequest request, string adminUserId);  
 }

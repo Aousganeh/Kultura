@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Kultura.Domain.Constants;  // ✅ Moved Roles to a separate file
+using Kultura.Domain.Constants;
 
 namespace Kultura.Persistence.Configurations;
 
@@ -12,27 +12,33 @@ public class RoleConfiguration : IEntityTypeConfiguration<IdentityRole>
         builder.HasData(
             new IdentityRole
             {
-                Id = Guid.NewGuid().ToString(),  // ✅ Generate GUID dynamically
-                Name = RoleConstants.Chef,
-                NormalizedName = RoleConstants.Chef.ToUpper()
+                Id = RoleConstants.ProjectOwner,
+                Name = "ProjectOwner",
+                NormalizedName = "PROJECTOWNER"
             },
             new IdentityRole
             {
-                Id = Guid.NewGuid().ToString(),  // ✅ Generate GUID dynamically
-                Name = RoleConstants.Admin,
-                NormalizedName = RoleConstants.Admin.ToUpper()
+                Id = RoleConstants.Admin,
+                Name = "Admin",
+                NormalizedName = "ADMIN"
             },
             new IdentityRole
             {
-                Id = Guid.NewGuid().ToString(),  // ✅ Generate GUID dynamically
-                Name = RoleConstants.Waiter,
-                NormalizedName = RoleConstants.Waiter.ToUpper()
+                Id = RoleConstants.Chef,
+                Name = "Chef",
+                NormalizedName = "CHEF"
             },
             new IdentityRole
             {
-                Id = Guid.NewGuid().ToString(),  // ✅ Generate GUID dynamically
-                Name = RoleConstants.Host,
-                NormalizedName = RoleConstants.Host.ToUpper()
+                Id = RoleConstants.Waiter,
+                Name = "Waiter",
+                NormalizedName = "WAITER"
+            },
+            new IdentityRole
+            {
+                Id = RoleConstants.Host,
+                Name = "Host",
+                NormalizedName = "HOST"
             }
         );
     }
