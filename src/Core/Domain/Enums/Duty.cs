@@ -3,7 +3,7 @@
 public enum Duty
 {
     Waiter,
-    Administrator,
+    Admin,
     Chef,
     Host
 }

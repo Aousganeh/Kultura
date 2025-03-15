@@ -7,4 +7,11 @@
         <RootNamespace>Kultura.Domain</RootNamespace>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.3.1" />
+      <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="9.0.3" />
+    </ItemGroup>
+
+   
+
 </Project>
